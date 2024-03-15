@@ -21,6 +21,7 @@ class ApiService {
     try {
       final response = await dio.get(endpoint, queryParameters: {
         'q': searchText,
+        'size': 100,
       });
       return response.data;
     } catch (e) {

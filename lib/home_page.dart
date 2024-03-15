@@ -46,7 +46,7 @@ class _HomePageState extends State<HomePage> {
             searchController: controller,
             suggestionsBuilder:
                 (BuildContext context, SearchController controller) {
-              return List<ListTile>.generate(5, (int index) {
+              return List<ListTile>.generate(1, (int index) {
                 final String item = 'item $index';
                 return ListTile(
                   title: Text(item),

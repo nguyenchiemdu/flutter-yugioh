@@ -7,6 +7,7 @@ class CardModel {
   String types;
   String level;
   String url;
+  String decsription;
 
   CardModel({
     required this.cardNumber,
@@ -17,6 +18,7 @@ class CardModel {
     required this.types,
     required this.level,
     required this.url,
+    required this.decsription,
   });
 
   static CardModel defaultCard() {
@@ -29,28 +31,40 @@ class CardModel {
         types: 'Fiend/Effect',
         level: '4',
         url:
-            'https://i.pinimg.com/236x/a8/12/05/a81205f3f1116ae4009000a0534bc2a3.jpg');
+            'https://i.pinimg.com/236x/a8/12/05/a81205f3f1116ae4009000a0534bc2a3.jpg',
+        decsription:
+            'This is a default card. It is used when the card is not found.');
   }
 
   static CardModel fromJson(Map<String, dynamic> json) {
     return CardModel(
-        cardNumber: json['Card_number'],
-        rarity: json['Rarity'],
-        cardName: json['Card_name'],
-        cardType: json['Card_type'],
-        attribute: json['Attribute'] ?? '--',
-        types: json['Types'] ?? '--',
-        level: json['Level'] ?? '--',
-        url:
-            'https://i.pinimg.com/236x/a8/12/05/a81205f3f1116ae4009000a0534bc2a3.jpg'
-        // url: json['Image_name'] != null
-        //     ? 'https://example.com/images/${json['Image_name']}'
-        //     : '',
-        );
+      cardNumber: json['Card_number'],
+      rarity: json['Rarity'],
+      cardName: json['Card_name'],
+      cardType: json['Card_type'],
+      attribute: json['Attribute'] ?? '--',
+      types: json['Types'] ?? '--',
+      level: json['Level'] ?? '--',
+      url:
+          'https://i.pinimg.com/236x/a8/12/05/a81205f3f1116ae4009000a0534bc2a3.jpg',
+      // url: json['Image_name'] != null
+      //     ? 'https://example.com/images/${json['Image_name']}'
+      //     : '',
+      decsription: json['Description'] ?? '--',
+    );
   }
 
   @override
   String toString() {
-    return 'CardModel{cardNumber: $cardNumber, rarity: $rarity, cardName: $cardName, cardType: $cardType, attribute: $attribute, types: $types, level: $level, url: $url}';
+    return 'CardModel{'
+        'cardNumber: $cardNumber,'
+        ' rarity: $rarity, cardName: $cardName,'
+        ' cardType: $cardType,'
+        ' attribute: $attribute,'
+        ' types: $types,'
+        ' level: $level,'
+        ' url: $url,'
+        ' decsription: $decsription'
+        '}';
   }
 }

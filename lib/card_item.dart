@@ -15,7 +15,7 @@ class _CardItemState extends State<CardItem> {
     return Container(
       margin: const EdgeInsets.all(8),
       child: Material(
-        textStyle: TextStyle(color: Colors.white),
+        textStyle: const TextStyle(color: Colors.white),
         child: InkWell(
           onHover: (value) {
             setState(() {
@@ -52,6 +52,7 @@ class _CardItemState extends State<CardItem> {
                       Text(widget.card.cardType),
                       Text(widget.card.attribute),
                       Text(widget.card.types),
+                      Text(widget.card.decsription)
                     ],
                   ),
                 ),
